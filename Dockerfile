@@ -48,15 +48,15 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev && \
     if [ -n "$GRAPHITI_VERSION" ]; then \
         if [ "$INSTALL_FALKORDB" = "true" ]; then \
-            uv pip install --system --upgrade "graphiti-core[falkordb]==$GRAPHITI_VERSION"; \
+            uv pip install --upgrade "graphiti-core[falkordb]==$GRAPHITI_VERSION"; \
         else \
-            uv pip install --system --upgrade "graphiti-core==$GRAPHITI_VERSION"; \
+            uv pip install --upgrade "graphiti-core==$GRAPHITI_VERSION"; \
         fi; \
     else \
         if [ "$INSTALL_FALKORDB" = "true" ]; then \
-            uv pip install --system --upgrade "graphiti-core[falkordb]"; \
+            uv pip install --upgrade "graphiti-core[falkordb]"; \
         else \
-            uv pip install --system --upgrade graphiti-core; \
+            uv pip install --upgrade graphiti-core; \
         fi; \
     fi
 
